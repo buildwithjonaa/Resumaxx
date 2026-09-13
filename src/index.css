@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    @apply bg-slate-100/70 text-slate-900 font-sans antialiased selection:bg-emerald-100 selection:text-emerald-900;
+  }
+}
+
+@keyframes flashEmerald {
+  0% {
+    background-color: #059669;
+    color: #ffffff;
+    transform: scale(1.08);
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.6);
+  }
+  50% {
+    background-color: #10b981;
+    color: #ffffff;
+    transform: scale(1.04);
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.8);
+  }
+  100% {
+    background-color: #ecfdf5;
+    color: #047857;
+    transform: scale(1);
+    box-shadow: none;
+  }
+}
+
+.animate-emerald-flash {
+  animation: flashEmerald 1.2s ease-in-out forwards;
+}
+
+/* Custom scrollbars for text areas */
+textarea::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+textarea::-webkit-scrollbar-track {
+  background: transparent;
+}
+textarea::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+textarea::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
