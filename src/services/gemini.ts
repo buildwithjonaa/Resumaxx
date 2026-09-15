@@ -56,11 +56,11 @@ export function createFallbackJobProfile(role: string, company: string): PresetP
   const r = role.trim();
   const c = company.trim() || 'General Employer';
   const roleLower = r.toLowerCase();
-  const compLower = c.toLowerCase();
+  
 
   let industry = 'General Services';
   let keywords: { id: string; word: string; category: string; added: boolean }[] = [];
-  let descriptionLines: string[] = [];
+  
 
   // Domain categorization & dynamic keyword extraction
   if (roleLower.includes('hair') || roleLower.includes('barber') || roleLower.includes('stylist') || roleLower.includes('salon') || roleLower.includes('beauty') || roleLower.includes('cosmetolog')) {

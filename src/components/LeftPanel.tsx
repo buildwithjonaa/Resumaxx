@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { 
   FileText, Briefcase, Play, Sparkles, CheckCircle2, AlertCircle, 
-  UploadCloud, Link as LinkIcon, Trash2, Eye, Globe, FileCheck, Building2, Search, ArrowRight, Compass, RefreshCw, Lock
+  UploadCloud, Link as LinkIcon, Trash2, Eye, Globe, FileCheck, Building2, Search, ArrowRight, RefreshCw, Lock
 } from 'lucide-react';
 import { PRESET_PROFILES } from '../constants/sampleData';
 import type { PresetProfile } from '../types';
@@ -14,7 +14,7 @@ interface LeftPanelProps {
   onAnalyze: () => void;
   isAnalyzing: boolean;
   hasAnalyzed: boolean;
-  currentProfile: PresetProfile;
+  currentProfile: PresetProfile | null;
   detectedCount: number;
   totalMissingCount: number;
   onSelectProfile: (profileId: string) => void;
@@ -536,7 +536,11 @@ Lead Professional | Apex Solutions (2021 - Present)
               <div className="p-2.5 bg-white rounded-lg border border-slate-200 flex items-center justify-between text-xs">
                 <div className="flex items-center space-x-2 text-slate-700">
                   <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-                  <span>Fetched Job Requirements for <strong>{currentProfile.company}</strong> ({currentProfile.targetRole})</span>
+                  <span>
+                   {currentProfile
+                      ? <>Fetched Job Requirements for <strong>{currentProfile.company}</strong> ({currentProfile.targetRole})</>
+                      : 'Fetched Job Requirements'}
+                  </span>
                 </div>
                 <span className="font-mono text-[10px] text-slate-500">{jdWordCount} words</span>
               </div>

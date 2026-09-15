@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { CheckCircle2, AlertTriangle, Zap, Layers, Info, Plus, Minus, RefreshCw, Sparkles, ShieldCheck } from 'lucide-react';
+import { CheckCircle2, AlertTriangle, Zap, Layers, Info, Plus, Minus, RefreshCw, Sparkles } from 'lucide-react';
 import type { KeywordItem } from '../types';
 
 interface Tab1KeywordMatrixProps {
